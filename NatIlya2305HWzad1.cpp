@@ -13,7 +13,6 @@ int main()
     int operation;
     do {
         cout << "выберите операцию, которую хотите сделать(1 - сложить, 2 - вычесть, 3 - умножить, 4 - разделить): ";
-        
         cin >> operation;
         switch (operation)
         {

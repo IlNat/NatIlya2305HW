@@ -2,6 +2,7 @@
 #include "fractionCalc.h"
 using namespace std;
 
+//¬вод числителей и знаменателей первой и второй дробей.
 void fractionCalc::enterFractions()
 {
 	cout << "¬ведите числитель первой дроби: ";
@@ -29,14 +30,15 @@ void fractionCalc::enterFractions()
 	
 }
 
+//—ложение дробей.
 void fractionCalc::fold()
 {
-	if (firstDenominator == secondDenominator)
+	if (firstDenominator == secondDenominator)//≈сли знаменатели дробей равны, то складываютс€ только их числители.
 	{
 		resultNominator = firstNominator + secondNominator;
 		resultDenominator = firstDenominator;
 	}
-	else
+	else//»наче, перва€ дробь полностью умножаетс€ на знаменатель второй дроби и со второй дробью происходит умножение на знаменатель первой дроби, после чего числители дробей складываютс€.
 	{
 		firstNominator *= secondDenominator;
 		secondNominator *= firstDenominator;
@@ -45,14 +47,15 @@ void fractionCalc::fold()
 	}
 }
 
+//¬ычитание дробей.
 void fractionCalc::subtract()
 {
-	if (firstDenominator == secondDenominator)
+	if (firstDenominator == secondDenominator)//≈сли знаменатели дробей равны, то происходит только операци€ вычитани€ числители.
 	{
 		resultNominator = firstNominator - secondNominator;
 		resultDenominator = firstDenominator;
 	}
-	else
+	else//“о же самое, что и сложение дробей с разными знаменател€ми, но вместо операции сложени€ здесь операци€ вычитани€.
 	{
 		firstNominator *= secondDenominator;
 		secondNominator *= firstDenominator;
@@ -62,6 +65,7 @@ void fractionCalc::subtract()
 	
 }
 
+//ƒеление дробей. ¬тора€ дробь переворачиваетс€ и числители дробей, и их знаменатели перемножаютс€.
 void fractionCalc::divide()
 {
 	int temp = secondNominator;
@@ -71,12 +75,14 @@ void fractionCalc::divide()
 	resultDenominator = firstDenominator * secondDenominator;
 }
 
+//ѕеремножение дробей. „ислители и знаменатели перемножаютс€ между собой.
 void fractionCalc::multiply()
 {
 	resultNominator = firstNominator * secondNominator;
 	resultDenominator = firstDenominator * secondDenominator;
 }
 
+//¬ывод результатных числител€ и знаменател€.
 void fractionCalc::printResult()
 {
 	cout << "–езультат равен:\n" << resultNominator << '/' << resultDenominator << '\n';
